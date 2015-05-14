@@ -1,32 +1,18 @@
-<html>
-<body>
-<title> Test</title>
 <?php
-#$servername = "localhost";
-#$dbname = "autorepair";
-
-// Create connection
-#$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-#if ($conn->connect_error) {
-#    die("Connection failed: " . $conn->connect_error);
-#}
-#echo "Connected successfully";
+session_start();
+session_unset();
+session_destroy();
+?>
+<html><body><title>Automotive Repair Database</title>
+<?php
+/*
+TODO
+delete entries
+*/
 #echo "My first PHP script!";
-echo "<a href=GetReport.php>Get Report</a><br>";
-echo
-
-#$sql = "select * from vehicle";
-#$result = $conn->query($sql);
-#echo gettype($conn);
-#echo gettype($result);
-#$result2 = mysql_query($sql);
-
-
-#$result = $conn->query($sql);
-#echo $result;
-$conn->close();
+#echo "<a href=GetReport.php>Get Report</a><br>";
+#echo "<a href=CreateStats.php>Create Statistic</a><br>";
+echo "<form action='GetReport.php' method='POST' target='_self'>Enter username: <input type='text' name='username' autofocus><br>Enter password: <input type='password' name='password'><br><input type='submit' value='Submit'></form>";
 ?>
 </table>
 </body>
