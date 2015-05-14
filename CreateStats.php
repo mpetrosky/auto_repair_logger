@@ -8,8 +8,6 @@ $db_user = $_SESSION["username"];
 $db_pwd = $_SESSION["password"];
 if (!mysql_connect($db_host, $db_user, $db_pwd)) die("Can't connect to database");
 if (!mysql_select_db($database)) die("Can't select database");
-#echo "welcome ".$_SESSION["username"]." ".$db_user."<br>";
-
 function GetTable($query)
 {
 	$result = mysql_query($query);
@@ -55,7 +53,7 @@ function CreateForm()
 }
 function CreateStat()
 {
-	#dis be where all the cute shit about which POST entry gets combobulated into a bona fide SQL string
+	#process POST data for SQL statement creation
 	if($_POST["VIN"]) $result = mysql_query("insert into vehicle(vin,make,model,year,engine) values('".$_POST["VIN"]."','".$_POST["Make"]."','".$_POST["Model"]."','".$_POST["Year"]."','".$_POST["Engine"]."')");
 	else if($_POST["PartName"]) $result = mysql_query("insert into parts(cost,part_name,part_number,store_bought) values('".$_POST["Cost"]."','".$_POST["PartName"]."','".$_POST["PartNumber"]."','".$_POST["StoreBought"]."')");
 	else if($_POST["AddlCost"]) $result = mysql_query("insert into service(name,addl_cost,taken_to_shop,part_number,vID) values('".$_POST["Name"]."','".$_POST["AddlCost"]."','".$_POST["TakenToShop"]."','".$_POST["PartNumber"]."','".$_POST["VehicleID"]."')");

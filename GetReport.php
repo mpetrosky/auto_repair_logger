@@ -35,14 +35,6 @@ function GetTable($query)
 		}
 		$counter++;
 	}
-	/*for($i=mysql_num_rows($result); $i>mysql_num_rows($result)-5; $i--)
-	{
-		$row = mysql_fetch_row($result);
-		echo "<tr>";
-		foreach($row as $cell)
-		   echo "<td>$cell</td>";
-		echo "</tr>";
-	}*/
 	echo "</table><br><br>";
 }
 function CreateForm($query)
